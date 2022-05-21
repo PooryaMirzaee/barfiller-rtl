@@ -129,8 +129,8 @@
                 if(type === 'width') {
                     CSSObj = { width : val };
                 }
-                else if (type === 'left') {
-                    CSSObj = { left: val };
+                else if (type === 'right') {
+                    CSSObj = { right: val };
                 }
 
                 time = time/1000;
@@ -141,7 +141,7 @@
 
             refill: function() {
                 fill.css('width', 0);
-                toolTip.css('left', 0);
+                toolTip.css('right', 0);
                 barWidth = object.width();
                 methods.initializeItems();
             },
@@ -156,14 +156,14 @@
 
                 var toolTipOffset = barWidth - toolTip.width();
                 fill.css( methods.getTransition(barWidth, settings.duration, 'width'));
-                toolTip.css( methods.getTransition(toolTipOffset, settings.duration, 'left'));
+                toolTip.css( methods.getTransition(toolTipOffset, settings.duration, 'right'));
 
             },	
 
             animateFill: function(barWidth) {
                 var toolTipOffset = barWidth - toolTip.width();
                 fill.stop().animate({width: '+=' + barWidth}, settings.duration);
-                toolTip.stop().animate({left: '+=' + toolTipOffset}, settings.duration);
+                toolTip.stop().animate({right: '+=' + toolTipOffset}, settings.duration);
             }
 			
         };
